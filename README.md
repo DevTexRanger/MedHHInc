@@ -188,16 +188,6 @@ ggplot(top_bottom_20, aes(x = estimate, y = reorder(county, estimate))) +
 ![Scatter plot using ggplot](https://github.com/DevTexRanger/MedHHInc/blob/main/ggplot_error_bars.png
 )
 
-### Arrange Data by Margin of Error
-
-Arrange the data in descending order by the margin of error.
-
-```r
-# Arrange data by margin of error
-texas_income %>% 
-  arrange(desc(MOE))
-```
-
 ## Save Data to CSV File
 
 Save the cleaned and filtered data to a CSV file. Remember to use double backslashes (\\) as a directory separator in file paths if you're on Windows.
