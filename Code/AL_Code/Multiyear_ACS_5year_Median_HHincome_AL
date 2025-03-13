@@ -44,6 +44,7 @@ medHHIncAL <- c(
   Hispanic= "B19013I_001"     # Median household income for Hispanics
 )
 
+
 # Specify the counties as the vector 'my counties'
 my_counties <- c("Jefferson",# Home to Birmingham, the largest city in Alabama, it is a key economic and cultural hub for the state.
                  "Shelby", # Part of the Birmingham-Hoover metro area, Shelby County is expanding due to its suburban appeal; currently the fastest growing county in AL.
@@ -79,9 +80,9 @@ alabama_income <- map_dfr(
 # Reshape the data from wide to long format
 alabama_income_long <- alabama_income %>%
   pivot_longer(
-    cols = c(generalE, whiteE, hispanicE, generalM, whiteM, hispanicM),
+    cols = c(GeneralE, WhiteE, HispanicE, GeneralM, WhiteM, HispanicM),
     names_to = c("income_type", ".value"),
-    names_pattern = "(general|white|hispanic)(E|M)"
+    names_pattern = "(General|White|Hispanic)(E|M)"
   ) %>%
   rename(county = NAME)
 
