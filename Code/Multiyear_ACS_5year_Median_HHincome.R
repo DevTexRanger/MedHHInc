@@ -11,21 +11,18 @@ p_load(dplyr, ggplot2, scales, tidyverse, tidycensus)
 census_api_key("ENTER_YOUR_CENSUS_API_KEY_HERE")
 
 yrs <- 2011:2023
-table_name <- "B19013A_001"
+table_name <- "B19013_001"
 
-# Load variables for each year and check for the specific table
 table_check <- sapply(yrs, function(year) {
   vars <- load_variables(year, "acs5", cache = TRUE)
-  table_name %in% vars$variable
+  table_name %in% vars$name  # Adjust if needed
 })
 
-# Create a data frame to summarize the results
 table_check_df <- data.frame(
   year = yrs,
   table_exists = table_check
 )
 
-# Print the results
 print(table_check_df)
 
 # Check if the table is present in all years
@@ -97,7 +94,7 @@ ggplot(top_bottom_20, aes(x = estimate, y = reorder(county, estimate))) +
   theme_minimal(base_size = 12.5) + 
   labs(title = "Median household income", 
        subtitle = "Counties in Texas", 
-       x = "2018-2022 ACS estimate", 
+       x = "2011-2023 ACS estimate", 
        y = "", 
        color = "Year") + 
   scale_x_continuous(labels = label_dollar())
