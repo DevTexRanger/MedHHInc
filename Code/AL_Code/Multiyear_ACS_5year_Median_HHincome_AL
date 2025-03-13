@@ -39,9 +39,9 @@ View(v23)
 # Create a variable name (medianhh) using the assignment operator in R, using a named vector with one element (tablename)
 # Define variables for general, White Alone, and Hispanic median household incomess
 medHHIncAL <- c(
-  general = "B19013_001",    # General median household income
-  white   = "B19013A_001",    # Median household income for White Alone
-  hispanic= "B19013I_001"     # Median household income for Hispanics
+  General = "B19013_001",    # General median household income
+  White   = "B19013A_001",    # Median household income for White Alone
+  Hispanic= "B19013I_001"     # Median household income for Hispanics
 )
 
 # Specify the counties as the vector 'my counties'
