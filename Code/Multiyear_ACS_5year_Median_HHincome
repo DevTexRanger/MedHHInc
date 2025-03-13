@@ -11,7 +11,7 @@ p_load(dplyr, ggplot2, scales, tidyverse, tidycensus)
 census_api_key("ENTER_YOUR_CENSUS_API_KEY_HERE")
 
 yrs <- 2011:2023
-table_name <- "B19013A_001"
+table_name <- "B19013_001"
 
 table_check <- sapply(yrs, function(year) {
   vars <- load_variables(year, "acs5", cache = TRUE)
