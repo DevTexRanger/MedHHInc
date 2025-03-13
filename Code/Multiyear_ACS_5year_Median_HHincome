@@ -94,7 +94,7 @@ ggplot(top_bottom_20, aes(x = estimate, y = reorder(county, estimate))) +
   theme_minimal(base_size = 12.5) + 
   labs(title = "Median household income", 
        subtitle = "Counties in Texas", 
-       x = "2018-2022 ACS estimate", 
+       x = "2011-2023 ACS estimate", 
        y = "", 
        color = "Year") + 
   scale_x_continuous(labels = label_dollar())
